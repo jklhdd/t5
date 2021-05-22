@@ -25,4 +25,5 @@ public interface TaiKhoanRepository extends CrudRepository<TaiKhoan,Integer> {
             "from TaiKhoan t, HoTen h, ThongTinCaNhan d where t.taiKhoan =?1 and t.matKhau=?2 and t.id = h.tk.id and t.id = d.tk.id")
     public ThanhVien getAccountByTaiKhoanAndMatKhau(String tk, String mk);
 
+
 }

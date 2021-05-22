@@ -47,6 +47,11 @@ public class KhachHangController {
         return tkRepository.getAccountByTaiKhoanAndMatKhau(tk,mk);
     }
 
+    @GetMapping("/search/{id}")
+    public TaiKhoan searchAccountById(@PathVariable int id){
+        return tkRepository.findById(id).get();
+    }
+
     @PostMapping("/create/{pass}")
     public String create(@PathVariable("pass") String mk, @RequestBody ThanhVien tv){
         TaiKhoan tk = new TaiKhoan();

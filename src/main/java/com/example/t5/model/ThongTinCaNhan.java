@@ -14,6 +14,7 @@ public class ThongTinCaNhan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(unique = true)
 	private String cmt;
 	private String sdt;
 
