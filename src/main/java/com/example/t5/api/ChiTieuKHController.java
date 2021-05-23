@@ -20,13 +20,13 @@ public class ChiTieuKHController {
 	@Autowired
     ChiTieuKHRepository chitieukhRepo;
 
-    @GetMapping
-    public List<ChiTieuKH> getAll(){
-        return (List<ChiTieuKH>) chitieukhRepo.findAll();
+    @GetMapping("/all/{tkId}")
+    public List<ChiTieuKH> getAll(@PathVariable("tkId") int id){
+        return chitieukhRepo.findAllByTkId(id);
     }
 
     @GetMapping("/{id}")
-    public ChiTieuKH getAll(@PathVariable("id") int id){
+    public ChiTieuKH getOneById(@PathVariable("id") int id){
         return chitieukhRepo.findById(id).get();
     }
 
