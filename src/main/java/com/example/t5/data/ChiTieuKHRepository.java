@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ChiTieuKHRepository extends CrudRepository<ChiTieuKH, Integer> {
-    List<ChiTieuKH> findAllByTkId(int id);
+    List<ChiTieuKH> findAllByTk_Id(int id);
 }

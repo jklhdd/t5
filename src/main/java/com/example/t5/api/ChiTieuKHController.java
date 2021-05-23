@@ -22,7 +22,7 @@ public class ChiTieuKHController {
 
     @GetMapping("/all/{tkId}")
     public List<ChiTieuKH> getAll(@PathVariable("tkId") int id){
-        return chitieukhRepo.findAllByTkId(id);
+        return chitieukhRepo.findAllByTk_Id(id);
     }
 
     @GetMapping("/{id}")
