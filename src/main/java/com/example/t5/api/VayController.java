@@ -6,12 +6,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.t5.data.*;
 import com.example.t5.dto.GiaoDichDto;
@@ -43,12 +38,13 @@ public class VayController {
         return vayRepository.findFirstByTkIdAndStatus(id, 1);
     }
 
-    @PostMapping
-    public void save(@RequestBody Vay vay){
+    @PutMapping("/approve/{id}")
+    public void update(@PathVariable("id") int id){
+        Vay vay = vayRepository.findById(id).get();
+        vay.setStatus(1);
         int month = vay.getNgayVay().toLocalDate().getMonthValue();
         int year = vay.getNgayVay().toLocalDate().getYear();
         NganSach n = nganSachRepository.getByYearAndMonth(year, month);
-        System.out.println(n.getSoDu());
 
         n.setSoDu(n.getSoDu()-vay.getKhoanVay());
 
@@ -59,6 +55,11 @@ public class VayController {
 
         chiTieuRepository.save(c);
         nganSachRepository.save(n);
+        vayRepository.save(vay);
+    }
+
+    @PostMapping
+    public void save(@RequestBody Vay vay){
         vayRepository.save(vay);
     }
 

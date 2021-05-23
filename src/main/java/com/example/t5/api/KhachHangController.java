@@ -10,6 +10,7 @@ import com.example.t5.model.HoTen;
 import com.example.t5.model.TaiKhoan;
 import com.example.t5.model.ThongTinCaNhan;
 
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -29,7 +30,9 @@ public class KhachHangController {
     }
     @GetMapping("/staff")
     public List<ThanhVien> getAllStaff(){
-        return tkRepository.getAllAccount("Nhan Vien");
+        List<ThanhVien> list = tkRepository.getAllAccount("Nhan Vien Giao Dich");
+        list.addAll(tkRepository.getAllAccount("Nhan Vien Tin Dung"));
+        return list;
     }
 
     @GetMapping("/{id}")
