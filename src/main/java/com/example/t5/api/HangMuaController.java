@@ -9,10 +9,7 @@ import com.example.t5.model.ChiTieuKH;
 import com.example.t5.model.HangMua;
 import com.example.t5.model.TheNganHang;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -48,5 +45,11 @@ public class HangMuaController {
         else return "Tai khoan hien khong du tien!";
 
         return "Thanh toan thanh cong";
+    }
+
+    @PostMapping
+    public String save(@RequestBody HangMua hangMua){
+        hangMuaRepository.save(hangMua);
+        return "Them mat hang thanh cong";
     }
 }
