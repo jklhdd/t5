@@ -23,27 +23,4 @@ public class ChiTieu {
 	private String mota;
 	private Date ngayTao;
 
-	public double getTien() {
-		return tien;
-	}
-
-	public void setTien(double tien) {
-		this.tien = tien;
-	}
-
-	public String getMota() {
-		return mota;
-	}
-
-	public void setMota(String mota) {
-		this.mota = mota;
-	}
-
-	public Date getNgayTao() {
-		return ngayTao;
-	}
-
-	public void setNgayTao(Date ngayTao) {
-		this.ngayTao = ngayTao;
-	}
 }

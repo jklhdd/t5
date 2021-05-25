@@ -26,19 +26,4 @@ public class GoiTinDung {
 	private float laiSuat;
 	private int kyHan;
 
-	public int getKyHan() {
-		return kyHan;
-	}
-
-	public void setKyHan(int kyHan) {
-		this.kyHan = kyHan;
-	}
-
-	public float getLaiSuat() {
-		return laiSuat;
-	}
-
-	public void setLaiSuat(float laiSuat) {
-		this.laiSuat = laiSuat;
-	}
 }

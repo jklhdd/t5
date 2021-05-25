@@ -26,5 +26,4 @@ public class TheNganHang {
 	@JoinColumn(name = "taikhoan_id", referencedColumnName = "id")
 	private TaiKhoan tk;
 
-
 }

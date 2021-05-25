@@ -29,4 +29,6 @@ public class Luong {
 	@OneToOne
 	@JoinColumn(name = "taikhoan_id", referencedColumnName = "id")
 	private TaiKhoan tk;
+
+
 }

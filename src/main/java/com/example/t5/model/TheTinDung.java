@@ -19,10 +19,8 @@ public class TheTinDung {
 	private int id;
 	@Column(unique = true)
 	private  String maThe;
-	private int soNgayVay;
-	private double tonNo;
+	private double vayToiDa;
 	private double phiDuyTri;
-	private Date ngayVay;
 	private int status;
 
 	@OneToOne
