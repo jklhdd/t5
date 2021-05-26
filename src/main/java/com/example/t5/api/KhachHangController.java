@@ -28,6 +28,7 @@ public class KhachHangController {
     public List<ThanhVien> getAll(){
         return tkRepository.getAllAccount();
     }
+
     @GetMapping("/staff")
     public List<ThanhVien> getAllStaff(){
         List<ThanhVien> list = tkRepository.getAllAccount("Nhan Vien Giao Dich");
@@ -77,5 +78,11 @@ public class KhachHangController {
         thongTinRepository.save(ttcn);
 
         return "Dang ki thanh cong";
+    }
+
+    @PutMapping
+    public String changeRole(@RequestBody TaiKhoan tk){
+        tkRepository.save(tk);
+        return "Sua doi thanh cong!";
     }
 }
