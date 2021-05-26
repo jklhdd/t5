@@ -95,7 +95,7 @@ public class SoTietKiemController {
     public void rutTien(@PathVariable ("id") int id){
         double tongTien;
         SoTietKiem soTietKiem = stkRepository.findById(id).get();
-        soTietKiem.setStatus(0);
+        soTietKiem.setStatus(-1);
         stkRepository.save(soTietKiem);
 
         TheNganHang theNganHang = theNganHangRepository.findFirstByTkIdAndStatus(soTietKiem.getTk().getId(), 1);
