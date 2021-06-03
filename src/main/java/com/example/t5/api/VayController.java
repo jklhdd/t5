@@ -81,7 +81,7 @@ public class VayController {
         if (tk_gui.getSoDu() < tientra) return "Khong du tien trong tai khoan!";
 
         tk_gui.setSoDu(tk_gui.getSoDu()-tientra);
-        v.setStatus(0);
+        v.setStatus(-1);
 
         gd.setDiaChi("Default");
         gd.setSoTien(tientra);
